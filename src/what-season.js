@@ -1,13 +1,13 @@
 const CustomError = require("../extensions/custom-error");
 
 module.exports = function getSeason(date) {
-	if (+date == Infinity) throw Error;
-	if (typeof date != "string") throw Error;
-	if (date == undefined || date == null)
-		return "Unable to determine the time of year!";
-	let newArray = date.split("");
-	if (+newArray[1] >= 12 || newArray[1] <= 2) return "winter";
-	if (+newArray[1] >= 3 && newArray[1] <= 5) return "spring";
-	if (+newArray[1] >= 6 && newArray[1] <= 8) return "summer";
-	if (+newArray[1] >= 9 && newArray[1] <= 11) return "autumn";
+	if (!date) return "Unable to determine the time of year!";
+	else {
+		let time = date.toDateString();
+		time = date.getMonth();
+		if (time >= 2 && time <= 4) return "spring";
+		else if (time >= 5 && time <= 7) return "summer";
+		else if (time >= 8 && time <= 10) return "autumn";
+		else return "winter";
+	}
 };
