@@ -6,5 +6,5 @@
 // require('./test/vigenere-cipher.test');
 // finished require("./test/hanoi-tower.test");
 // finished require("./test/transform-array.test");
-require("./test/simple-chain.test");
-// require('./test/recursive-depth.test');
+// finished require("./test/simple-chain.test");
+require("./test/recursive-depth.test");
