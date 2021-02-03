@@ -1,10 +1,10 @@
-// require("./test/count-cats.test");
-// require("./test/carbon-dating.test");
-// require("./test/dream-team.test");
-// require("./test/extended-repeater.test");
-// require("./test/what-season.test");
+// finished require("./test/count-cats.test");
+// finished require("./test/carbon-dating.test");
+// finished require("./test/dream-team.test");
+// finished require("./test/extended-repeater.test");
+// finished require("./test/what-season.test");
 // require('./test/vigenere-cipher.test');
-require("./test/hanoi-tower.test");
-// require("./test/transform-array.test");
-// require('./test/simple-chain.test');
+// finished require("./test/hanoi-tower.test");
+// finished require("./test/transform-array.test");
+require("./test/simple-chain.test");
 // require('./test/recursive-depth.test');
