@@ -10,12 +10,12 @@ class VigenereCipheringMachine {
 		message = String(message).toUpperCase();
 		key = String(key).toUpperCase();
 		let newKey = "";
-		let k = 0;
+		let wordsNumber = 0;
 		for (let i = 0; i < message.length; i++) {
 			if (message.charCodeAt(i) >= 65 && message.charCodeAt(i) <= 90) {
 				//If letter
-				newKey += key[k % key.length];
-				k++;
+				newKey += key[wordsNumber % key.length];
+				wordsNumber++;
 			} else {
 				newKey += message[i];
 			}
@@ -49,15 +49,15 @@ class VigenereCipheringMachine {
 		encryptedMessage = String(encryptedMessage).toUpperCase();
 		key = String(key).toUpperCase();
 		let newKey = "";
-		let k = 0;
+		let wordsNumber = 0;
 		for (let i = 0; i < encryptedMessage.length; i++) {
 			if (
 				encryptedMessage.charCodeAt(i) >= 65 &&
 				encryptedMessage.charCodeAt(i) <= 90
 			) {
 				//If letter
-				newKey += key[k % key.length];
-				k++;
+				newKey += key[wordsNumber % key.length];
+				wordsNumber++;
 			} else {
 				newKey += encryptedMessage[i];
 			}
