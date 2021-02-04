@@ -41,7 +41,53 @@ class VigenereCipheringMachine {
 			return temp;
 		}
 	}
-	decrypt(encryptedMessage, key) {}
+
+	decrypt(encryptedMessage, key) {
+		if (typeof encryptedMessage == "undefined" || typeof key == "undefined")
+			throw Error;
+		let array = [];
+		encryptedMessage = String(encryptedMessage).toUpperCase();
+		key = String(key).toUpperCase();
+		let newKey = "";
+		let k = 0;
+		for (let i = 0; i < encryptedMessage.length; i++) {
+			if (
+				encryptedMessage.charCodeAt(i) >= 65 &&
+				encryptedMessage.charCodeAt(i) <= 90
+			) {
+				//If letter
+				newKey += key[k % key.length];
+				k++;
+			} else {
+				newKey += encryptedMessage[i];
+			}
+		}
+		for (let i = 0; i < encryptedMessage.length; i++) {
+			if (
+				encryptedMessage.charCodeAt(i) >= 65 &&
+				encryptedMessage.charCodeAt(i) <= 90
+			) {
+				array.push(
+					String.fromCharCode(
+						((encryptedMessage.charCodeAt(i) + 26 - newKey.charCodeAt(i)) %
+							26) +
+							65
+					)
+				);
+			} else {
+				array.push(encryptedMessage[i]);
+			}
+		}
+		if (this.flag == true || this.flag == undefined) {
+			let templ = array.join("");
+			array = [];
+			return templ;
+		} else {
+			let temp = array.reverse().join("");
+			array = [];
+			return temp;
+		}
+	}
 }
 
 module.exports = VigenereCipheringMachine;
